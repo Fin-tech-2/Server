@@ -19,10 +19,10 @@ public class MemberEntity {
     private String memberEmail;
 
     @Column
-    private String memberPassword;
+    private String memberName;
 
     @Column
-    private String memberName;
+    private String memberPassword;
 
     public static MemberEntity toMemberEntity(MemberDTO memberDTO) {
         MemberEntity memberEntity = new MemberEntity();

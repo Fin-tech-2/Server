@@ -1,16 +1,17 @@
 package com.example.member.controller;
 
 import com.example.member.dto.MemberDTO;
+import com.example.member.entity.MemberEntity;
 import com.example.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
-@Controller
+@RestController // 이걸 사용하면 Rest Controller로 변경 -> 반환 타입이 JSON이 됨
 @RequiredArgsConstructor
 public class MemberController {
     // 생성자 주입
@@ -36,18 +37,23 @@ public class MemberController {
     }
 
     @PostMapping("/member/login")
-    public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
+    public ResponseEntity login(@RequestBody MemberDTO memberDTO, HttpSession session) {
         MemberDTO loginResult = memberService.login(memberDTO);
-        if(loginResult != null) {
-            //login 성공
-            //System.out.println("memberDTO = " + memberDTO + ", session = " + session);
-            System.out.println("MemberController.login");
-            session.setAttribute("loginEmail", loginResult.getMemberEmail());
-            return "main";
-        } else {
-            //login 실패시 첫 화면 으로
-            return "index";
+        if (loginResult != null) {
+            System.out.println("컨트롤러 : "+loginResult.getMemberName() + ", " + loginResult.getMemberEmail());
+            return ResponseEntity.ok(loginResult);
         }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("아이디 또는 비밀번호가 일치하지 않습니다.");
 
+//        if(loginResult != null) {
+//            //login 성공
+//            //System.out.println("memberDTO = " + memberDTO + ", session = " + session);
+//            System.out.println("MemberController.login");
+//            session.setAttribute("loginEmail", loginResult.getMemberEmail());
+//            return "로그인 성공";
+//        } else {
+//            //login 실패시 첫 화면 으로
+//            return "로그인실패";
+//        }
     }
 }
