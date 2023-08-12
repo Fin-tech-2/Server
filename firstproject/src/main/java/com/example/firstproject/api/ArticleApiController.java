@@ -15,7 +15,7 @@ import java.util.List;
 @RestController //일반적으로 데이터를 (보통 JSON을) 반환한다 .
 public class ArticleApiController {
     @Autowired //DI dependency injection(외부에서 가져온다.), Spring boot에서 땡겨와야한다.
-
+//깃허브 연습
     private ArticleRepository articleRepository;
     //GET
     @GetMapping("/api/articles")
