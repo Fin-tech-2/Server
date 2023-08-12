@@ -1,0 +1,32 @@
+{{>layouts/header}}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">GoalPrice</th>
+        <th scope="col">StartDate</th>
+        <th scope="col">EndDate</th>
+        <th scope="col">Category</th>
+        <th scope="col">Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#article}}
+    <tr>
+        <th >{{id}}</th>
+        <td>{{title}}</td>
+        <td>{{goalprice}}</td>
+        <td>{{startdate}}</td>
+        <td>{{enddate}}</td>
+        <td>{{category}}</td>
+        <td>{{content}}</td>
+    </tr>
+    {{/article}}
+    </tbody>
+</table>
+<a href="/articles/{{article.id}}/edit" class="btn btn-primary">Edit</a>
+<!>
+<a href="/articles/{{article.id}}/delete" class="btn btn-danger">Delete</a>
+<a href="/articles">Go to Article List</a>
+{{>layouts/footer}}

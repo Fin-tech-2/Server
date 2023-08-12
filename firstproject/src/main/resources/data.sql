@@ -1,0 +1,3 @@
+INSERT INTO article(title, goalprice, startdate, enddate, price, category ,content) VALUES ('aaa', '50000', '0809', '0815', '20000' , 'fund' ,'1111');
+INSERT INTO article(title, goalprice, startdate, enddate, price, category ,content) VALUES ('bb', '50000', '0809', '0815', '30000', 'fund' ,'1111');
+INSERT INTO article(title, goalprice, startdate, enddate, price, category ,content) VALUES ('ccc', '50000', '0809', '0815', '50000', 'fund' ,'1111');

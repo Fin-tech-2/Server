@@ -1,0 +1,38 @@
+{{>layouts/header}}
+
+<form class="container" action="/articles/create" method="post">
+    <div class="mb-3">
+        <label class="form-label">title</label>
+        <input type="text" class="form-control" name="title">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">goalPrice</label>
+        <input type="text" class="form-control" name="goalprice">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">STARTDATE</label>
+        <input type="text" class="form-control" name="startdate">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">ENDDATE</label>
+        <input type="text" class="form-control" name="enddate">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">CATEGORY</label>
+        <input type="text" class="form-control" name="category">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">내용</label>
+        <textarea class="form-control" rows="3" name="content"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="/articles">Back</a>
+</form>
+
+{{>layouts/footer}}
+
