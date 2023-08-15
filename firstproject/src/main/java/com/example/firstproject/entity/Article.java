@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.Interceptor;
+import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 
@@ -44,6 +46,11 @@ public class Article {
     @Column
     private String content;
 
+    @ColumnDefault("0")
+    private Integer student;
+
+
+    //article 객체의 각 속성에 대해 null이 아닌 값이 주어진 경우에만 해당 엔티티의 속성을 업데이트하게 된다.
     public void patch(Article article) {
         if (article.title != null)
             this.title = article.title;
@@ -63,5 +70,8 @@ public class Article {
             this.category = article.category;
         if (article.content != null)
             this.content = article.content;
+        //if (article.student != 0)
+        //    this.student = article.student;
+
     }
 }

@@ -17,9 +17,10 @@ public class ArticleForm {
     private String introductionimg;
     private String category;
     private String content;
+    private Integer student;
 
     public Article toEntity() {
-        return new Article(id, title, goalprice, startdate, enddate, price,thumbnail, introductionimg, category, content);
+        return new Article(id, title, goalprice, startdate, enddate, price,thumbnail, introductionimg, category, content, student);
     }
 
 }
