@@ -77,6 +77,7 @@ public class ArticleApiController {
 
         //3. 대상 삭제
         articleRepository.delete(target);
+
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
