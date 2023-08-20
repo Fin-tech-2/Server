@@ -14,4 +14,4 @@ FRONT-END : 임수빈 / 김주은
 
 JAVA / SPRING BOOT / REACT / TYPESCRIPT / Mysql
 
-[pic1]: /public/assets/pic1.png
+[pic1]: /pic1.png
